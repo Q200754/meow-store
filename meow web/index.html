@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>MEOW STUDIO | Minimal Pastel Streetwear Fashion Store</title>
+
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description"
+    content="ร้านเสื้อผ้าออนไลน์สไตล์ Minimal Fashion Store โทนสีชมพูพาสเทลและขาว สตรีทแวร์ระดับพรีเมียม สั่งซื้อง่ายผ่าน Instagram DM ไม่ต้องสมัครสมาชิก">
+  <meta name="theme-color" content="#FDE8ED">
+  <meta property="og:title" content="MEOW STUDIO - Minimal Pastel Streetwear">
+  <meta property="og:description" content="สตรีทแวร์มินิมอลโทนพาสเทล ช้อปสะดวก สั่งซื้อง่ายผ่าน Instagram DM">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%23F7B5C5'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-weight='900' font-size='46' fill='%23FFFFFF'>M</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span id="announcementText">
+      ✨ NEW DROP 'PASTEL NOIR' COLLECTION | สั่งซื้อง่ายๆ ผ่าน Instagram DM ส่งฟรีทุกออเดอร์ 1,500.- ขึ้นไป ✨
+    </span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Brand Logo -->
+        <a href="#home" class="logo-area" aria-label="MEOW STUDIO Home">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">
+            <span class="shop-name-display">MEOW STUDIO</span>
+            <span class="logo-tag">BANGKOK / EST. 2026</span>
+          </div>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">หน้าแรก</a></li>
+          <li><a href="#catalog" class="nav-link">สินค้าทั้งหมด</a></li>
+          <li><a href="#new-arrivals" class="nav-link">สินค้าใหม่</a></li>
+        </ul>
+
+        <!-- Navigation Actions -->
+        <div class="nav-actions">
+          <button class="btn-icon"
+            onclick="document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' }); document.getElementById('searchInput').focus();"
+            title="ค้นหาสินค้า" aria-label="Search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+
+          <button class="btn-admin-nav" onclick="AdminPortal.openAuthModal()" title="ระบบจัดการหลังบ้านแอดมิน">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>หลังบ้าน</span>
+          </button>
+
+          <a href="https://www.instagram.com/me_ws.t0re?rpxt=MWQwdGFidnEyNGM1Nw%3D%3D&utm_source=qr" target="_blank"
+            rel="noopener noreferrer" class="btn-ig-nav ig-link-target" title="สั่งซื้อทาง Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+            </svg>
+            <span>Instagram Shop</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open navigation menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="21" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile menu">
+    <div>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo-area">
+          <div class="logo-icon">M</div>
+          <span class="logo-text shop-name-display" style="font-size: 1.1rem;">MEOW STUDIO</span>
+        </div>
+        <button class="btn-icon" id="drawerCloseBtn" aria-label="Close menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <ul class="drawer-links">
+        <li><a href="#home" onclick="document.getElementById('drawerBackdrop').click()">หน้าแรก</a></li>
+        <li><a href="#catalog" onclick="document.getElementById('drawerBackdrop').click()">สินค้าทั้งหมด (All Items)</a>
+        </li>
+        <li><a href="#new-arrivals" onclick="document.getElementById('drawerBackdrop').click()">สินค้าใหม่ (New
+            Arrivals)</a></li>
+        <li><a href="#how-to-order" onclick="document.getElementById('drawerBackdrop').click()">วิธีสั่งซื้อผ่าน
+            Instagram</a></li>
+        <li style="margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--border-light);">
+          <button class="drawer-admin-btn"
+            onclick="document.getElementById('drawerBackdrop').click(); AdminPortal.openAuthModal();">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>ระบบหลังบ้านแอดมิน (Admin Portal)</span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <a href="https://www.instagram.com/me_ws.t0re?rpxt=MWQwdGFidnEyNGM1Nw%3D%3D&utm_source=qr" target="_blank"
+        rel="noopener noreferrer" class="btn-ig-order-main ig-link-target"
+        style="font-size: 0.85rem; padding: 0.75rem;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+        </svg>
+        เปิด Instagram ร้าน (<span class="ig-handle-display">@me_ws.t0re</span>)
+      </a>
+      <p style="text-align: center; font-size: 0.75rem; color: var(--charcoal-400); margin-top: 0.75rem;">
+        แคปภาพสินค้าแล้วส่ง DM ได้เลย ไม่ต้องสมัครสมาชิก
+      </p>
+    </div>
+  </aside>
+
+  <!-- Hero Section: Left = Brand Story, Right = How To Order Guide -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left Column: Hero Brand Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span>✨ VINTAGE & 2ND HAND PASTEL STREETWEAR</span>
+          </div>
+          <h1 class="hero-title">
+            1-OF-1 VINTAGE <br>
+            <span class="highlight">PASTEL PIECES</span> ONLY
+          </h1>
+          <p class="hero-subtitle">
+            แหล่งรวมเสื้อผ้าสตรีทแวร์มือสองของแท้ คัดสภาพเกรด ~90%+/100% โทนสีชมพูพาสเทล ขาว และเอิร์ธโทน
+            ทุกชิ้นมีเพียงตัวเดียวในโลก ระบุสัดส่วนจริง (อก/ยาว) ละเอียด ไม่ต้องเลือกไซซ์หรือสี แคปหน้าจอส่งสั่งซื้อผ่าน
+            Instagram DM ได้ทันที
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="btn-primary">
+              <span>เลือกชมสินค้ามือสองทั้งหมด</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </a>
+            <a href="#new-arrivals" class="btn-outline-pink">
+              <span>สินค้ามาใหม่ประจำสัปดาห์</span>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h4>1-OF-1</h4>
+              <p>มีเพียงชิ้นเดียว</p>
+            </div>
+            <div class="stat-item">
+              <h4>CLEANED</h4>
+              <p>ซักอบฆ่าเชื้อแล้ว</p>
+            </div>
+            <div class="stat-item">
+              <h4>DIRECT DM</h4>
+              <p>สั่งซื้อทาง IG ทันที</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: How To Order Panel (Cards ผืนผ้า) -->
+        <div class="hero-order-panel">
+          <div class="hero-order-header">
+            <span class="section-label">EASY SHOPPING</span>
+            <h3 class="hero-order-title">ขั้นตอนการสั่งซื้อผ่าน Instagram</h3>
+            <p class="hero-order-desc">ไม่ต้องเสียเวลาสมัครสมาชิก สั่งง่าย ได้ของไว ใน 3 ขั้นตอน</p>
+          </div>
+
+          <div class="hero-order-cards">
+            <!-- Step 1 -->
+            <div class="hero-step-card">
+              <div class="hero-step-num">1</div>
+              <div class="hero-step-info">
+                <h4>เลือกดูสินค้าที่ชอบ</h4>
+                <p>คลิกดูรูปภาพหลายมุม ตรวจสอบรหัสสินค้า (SKU) และเช็กสัดส่วนจริง</p>
+              </div>
+            </div>
+
+            <!-- Step 2 (Featured) -->
+            <div class="hero-step-card hero-step-card--featured">
+              <div class="hero-step-badge">RECOMMENDED</div>
+              <div class="hero-step-num featured">2</div>
+              <div class="hero-step-info">
+                <h4>แคปหน้าจอ หรือกดปุ่มสั่งซื้อ</h4>
+                <p>ระบบจัดวางข้อมูลให้แคปส่งได้ชัดเจน หรือกดปุ่มระบบจะคัดลอกข้อความและเปิด Instagram ให้ทันที</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="hero-step-card">
+              <div class="hero-step-num">3</div>
+              <div class="hero-step-info">
+                <h4>ส่งข้อความในแชต DM</h4>
+                <p>แอดมินร้านตอบกลับอย่างรวดเร็ว พร้อมเช็กสต็อก แจ้งเลขบัญชีโอนเงิน และจัดส่งให้ทันที</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">CATEGORIES</span>
+        <h2 class="section-title">หมวดหมู่สินค้า</h2>
+        <p class="section-desc">เลือกชมสินค้าตามสไตล์ที่คุณชื่นชอบ ตั้งแต่เสื้อยืด ฮู้ดดี้ กางเกง จนถึงแอคเซสเซอรี</p>
+      </div>
+
+      <!-- Categories Pills Scroll -->
+      <div class="categories-bar" id="categoriesBar">
+        <!-- Rendered dynamically by Store.renderCategories() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section class="products-section" id="new-arrivals" style="background-color: var(--surface);">
+    <div class="container">
+      <div class="section-header"
+        style="text-align: left; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="section-label">JUST DROPPED</span>
+          <h2 class="section-title">สินค้ามาใหม่ (New Arrivals)</h2>
+          <p class="section-desc" style="margin: 0.25rem 0 0 0;">อัปเดตไอเทมสตรีทแวร์พาสเทลล่าสุดประจำฤดูกาล</p>
+        </div>
+        <a href="#catalog" class="btn-outline-pink" style="padding: 0.5rem 1.2rem; font-size: 0.82rem;">
+          ดูสินค้าทั้งหมดในร้าน &rarr;
+        </a>
+      </div>
+
+      <div class="product-grid" id="newArrivalsGrid">
+        <!-- Rendered by Store.renderFeaturedSections() -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- All Products Catalog Section -->
+  <section class="products-section" id="catalog" style="border-top: 1px solid var(--border-light);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FULL CATALOG</span>
+        <h2 class="section-title">สินค้าทั้งหมด (All Products)</h2>
+        <p class="section-desc">ค้นหาและเลือกชมสินค้าคุณภาพจาก MEOW STUDIO สั่งซื้อได้ทันทีผ่าน Instagram</p>
+      </div>
+
+      <!-- Search & Filters Toolbar -->
+      <div class="catalog-toolbar">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+          <input type="text" id="searchInput" class="search-input"
+            placeholder="ค้นหาชื่อสินค้า หรือรหัสสินค้า (เช่น MW-TS-01)..." aria-label="Search products">
+        </div>
+
+        <div class="toolbar-controls">
+          <select id="sortSelect" class="filter-select" aria-label="Sort products">
+            <option value="featured">แนะนำ (Featured)</option>
+            <option value="newest">มาใหม่ล่าสุด (Newest)</option>
+            <option value="price-low">ราคา: ต่ำไปสูง</option>
+            <option value="price-high">ราคา: สูงไปต่ำ</option>
+          </select>
+
+          <span class="product-count-badge" id="productCountBadge">กำลังโหลด...</span>
+        </div>
+      </div>
+
+      <!-- Main Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Rendered dynamically by Store.renderProducts() -->
+      </div>
+    </div>
+  </section>
+
+  <!-- anchor kept for footer links -->
+  <div id="how-to-order"></div>
+
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="shop-name-display">MEOW STUDIO</h3>
+          <p>
+            ร้านเสื้อผ้าออนไลน์สไตล์ Minimal Fashion & Pastel Streetwear ออกแบบมาเพื่อให้การช้อปปิ้งออนไลน์สะดวก
+            เรียบง่าย และปลอดภัยที่สุดผ่าน Instagram Direct Message
+          </p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/me_ws.t0re?rpxt=MWQwdGFidnEyNGM1Nw%3D%3D&utm_source=qr" target="_blank"
+              rel="noopener noreferrer" class="social-circle-btn ig-link-target" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#home" class="social-circle-btn" title="LINE Official">
+              <span style="font-weight: 800; font-size: 0.75rem;">LINE</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>หมวดหมู่สินค้า</h5>
+          <ul class="footer-links">
+            <li><a href="#catalog"
+                onclick="Store.activeCategory='tshirt'; Store.renderCategories(); Store.renderProducts();">T-Shirt
+                (เสื้อยืด)</a></li>
+            <li><a href="#catalog"
+                onclick="Store.activeCategory='hoodie'; Store.renderCategories(); Store.renderProducts();">Hoodie
+                (ฮู้ดดี้)</a></li>
+            <li><a href="#catalog"
+                onclick="Store.activeCategory='pants'; Store.renderCategories(); Store.renderProducts();">Pants
+                (กางเกง)</a></li>
+            <li><a href="#catalog"
+                onclick="Store.activeCategory='cap'; Store.renderCategories(); Store.renderProducts();">Cap (หมวก)</a>
+            </li>
+            <li><a href="#catalog"
+                onclick="Store.activeCategory='accessories'; Store.renderCategories(); Store.renderProducts();">Accessories
+                (กระเป๋า & เครื่องประดับ)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>ข้อมูลร้านค้า</h5>
+          <ul class="footer-links">
+            <li><a href="#how-to-order">วิธีการสั่งซื้อสินค้า</a></li>
+            <li><a href="javascript:void(0)" onclick="Store.openSizeGuide()">วิธีวัดไซซ์ & มาตรฐานมือสอง</a></li>
+            <li><a href="#catalog">สินค้ามาใหม่ (New Drops)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>สั่งซื้อ & ติดต่อร้าน</h5>
+          <ul class="footer-links" style="font-size: 0.85rem; color: var(--charcoal-300);">
+            <li>Instagram: <strong class="ig-handle-display" style="color: var(--pink-300);">@me_ws.t0re</strong>
+            </li>
+            <li>LINE ID: <strong style="color: var(--pink-300);">@meowstudio</strong></li>
+            <li>เวลาทำการ: 10:00 - 22:00 น. ทุกวัน</li>
+            <li style="margin-top: 0.5rem; color: var(--charcoal-400); font-size: 0.78rem;">
+              * ลูกค้าสามารถแคปหน้าจอรูปสินค้าพร้อมรหัส แล้วส่ง DM สั่งซื้อได้ตลอด 24 ชม.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <span class="shop-name-display">MEOW STUDIO</span>. All rights reserved. Minimal Pastel Fashion.
+        </div>
+        <div>
+          <!-- Secret/Discreet Owner Admin Trigger -->
+          <button class="admin-trigger-link" onclick="AdminPortal.openAuthModal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <span>ระบบจัดการร้านค้า (สำหรับเจ้าของร้าน)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Mobile Quick Instagram DM Button -->
+  <a href="https://www.instagram.com/me_ws.t0re?rpxt=MWQwdGFidnEyNGM1Nw%3D%3D&utm_source=qr" target="_blank"
+    rel="noopener noreferrer" class="floating-ig-quick ig-link-target" title="สั่งซื้อผ่าน Instagram DM">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+    <span>สั่งซื้อผ่าน IG</span>
+  </a>
+
+  <!-- =======================================================================
+       MODALS
+       ======================================================================= -->
+
+  <!-- Product Detail Lightbox Modal -->
+  <div class="modal-overlay" id="productModal" onclick="if(event.target === this) Store.closeProductModal()">
+    <div class="modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="Store.closeProductModal()" aria-label="Close product modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div id="productModalContent">
+        <!-- Injected dynamically by Store.openProductModal() -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2nd Hand Measuring & Condition Guide Modal -->
+  <div class="modal-overlay" id="sizeGuideModal" onclick="if(event.target === this) Store.closeSizeGuide()">
+    <div class="modal-container" style="max-width: 580px; padding: 2rem;" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="Store.closeSizeGuide()" aria-label="Close guide">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div style="text-align: center; margin-bottom: 1.25rem;">
+        <span class="section-label">2ND HAND QUALITY GUIDE</span>
+        <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--charcoal-900);">วิธีวัดไซซ์ & มาตรฐานสินค้ามือสอง
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--charcoal-500);">เสื้อผ้ามือสองทุกชิ้นมีเพียง 1 ตัว ไม่มีการเลือกไซซ์
+          แต่ทางร้านวัดจากตัวจริงอย่างละเอียด</p>
+      </div>
+
+      <div
+        style="background: var(--surface); padding: 1.25rem; border-radius: var(--radius-md); font-size: 0.85rem; line-height: 1.7; color: var(--charcoal-700);">
+        <h4 style="font-weight: 700; color: var(--charcoal-900); margin-bottom: 0.4rem;">📐 วิธีการวัดสัดส่วนจริง (นิ้ว)
+        </h4>
+        <ul style="padding-left: 1.2rem; margin-bottom: 1rem;">
+          <li><strong>รอบอก (Chest):</strong> วัดจากใต้รักแร้ซ้ายไปขวาขณะวางราบบนโต๊ะ แล้วคูณสอง</li>
+          <li><strong>ความยาว (Length):</strong> วัดจากจุดคอด้านบนสุดตรงลงมาถึงชายเสื้อ</li>
+          <li><strong>ไหล่ (Shoulder):</strong> วัดจากรอยต่อหัวไหล่ซ้ายไปขวา (ทรง Drop Shoulder ไหล่จะกว้างพิเศษ)</li>
+        </ul>
+
+        <h4 style="font-weight: 700; color: var(--charcoal-900); margin-bottom: 0.4rem;">✨ มาตรฐานระดับสภาพสินค้า</h4>
+        <ul style="padding-left: 1.2rem; margin-bottom: 1rem;">
+          <li><strong style="color: #059669;">~95%/100% (Mint):</strong> สภาพเหมือนใหม่ ไร้ตำหนิ คอเสื้อแน่น สีสด</li>
+          <li><strong style="color: #2563EB;">~90%/100% (Excellent):</strong> สภาพสวยมาก เนื้อผ้าสมบูรณ์
+            อาจมีรอยเฟดธรรมชาติเล็กน้อย</li>
+          <li><strong style="color: #D97706;">~85%/100% (Vintage):</strong> วินเทจแท้ ผ้าฟอกสวย มีเสน่ห์ของกาลเวลา
+            ระบุจุดตำหนิชัดเจน</li>
+        </ul>
+
+        <p
+          style="font-size: 0.78rem; color: var(--charcoal-500); text-align: center; margin-top: 0.5rem; background: var(--pink-100); padding: 0.5rem; border-radius: 6px;">
+          🧺 สินค้าทุกชิ้นผ่านการคลีนและอบโอโซนฆ่าเชื้อ 100% พร้อมสวมใส่ได้ทันที
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Verification (PIN Protection) Modal -->
+  <div class="modal-overlay" id="adminAuthModal" onclick="if(event.target === this) AdminPortal.closeAuthModal()">
+    <div class="modal-container pin-dialog" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="AdminPortal.closeAuthModal()" aria-label="Close authentication">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <div class="pin-icon">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+          <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+        </svg>
+      </div>
+
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--charcoal-900); margin-bottom: 0.3rem;">
+        เข้าสู่ระบบจัดการร้านค้า</h3>
+      <p style="font-size: 0.82rem; color: var(--charcoal-500);">เฉพาะเจ้าของร้านเท่านั้น กรุณาระบุรหัส PIN 4 หลัก
+        (ค่าเริ่มต้นคือ 8888)</p>
+
+      <form onsubmit="event.preventDefault(); AdminPortal.verifyPin();">
+        <input type="password" id="adminPinInput" class="pin-input" maxlength="8" placeholder="••••" autocomplete="off"
+          autofocus>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.8rem;">
+          ยืนยันรหัส PIN
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Store Management Dashboard Modal -->
+  <div class="modal-overlay" id="adminDashboardModal" onclick="if(event.target === this) AdminPortal.closeAdmin()">
+    <div class="modal-container admin-modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" onclick="AdminPortal.closeAdmin()" aria-label="Close admin dashboard">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Dashboard Header -->
+      <div class="admin-header">
+        <div class="admin-header-left">
+          <div class="admin-brand-badges">
+            <span class="admin-brand-pill">MEOW STUDIO</span>
+            <span class="admin-version-tag">PORTAL v2.0</span>
+            <span class="admin-status-online">
+              <span class="dot-indicator"></span> แอดมินพร้อมใช้งาน
+            </span>
+          </div>
+          <h2 class="admin-portal-title">ระบบจัดการร้านค้าหลังบ้าน</h2>
+        </div>
+
+        <div class="admin-header-actions">
+          <button class="btn-primary admin-btn-add" onclick="AdminPortal.openAddProduct()"
+            title="เพิ่มสินค้ามือสองชิ้นใหม่">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg>
+            <span>+ เพิ่มสินค้าใหม่</span>
+          </button>
+          <button class="btn-admin-logout" onclick="AdminPortal.logout()" title="ออกจากระบบและล็อคความปลอดภัย">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+            <span>ล็อคระบบ</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Segmented Admin Navigation Tabs -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" id="adminTabBtn-products" data-tab="products"
+          onclick="AdminPortal.switchTab('products')">
+          <span>📦 รายการสินค้าทั้งหมด</span>
+          <span class="tab-badge" id="tabBadgeProducts">8</span>
+        </button>
+        <button class="admin-tab-btn" id="adminTabBtn-analytics" data-tab="analytics"
+          onclick="AdminPortal.switchTab('analytics')">
+          <span>📊 สถิติ & ยอดขาย</span>
+        </button>
+        <button class="admin-tab-btn" id="adminTabBtn-form" data-tab="form" onclick="AdminPortal.openAddProduct()">
+          <span>✏️ เพิ่ม / แก้ไขสินค้า</span>
+        </button>
+        <button class="admin-tab-btn" id="adminTabBtn-settings" data-tab="settings"
+          onclick="AdminPortal.switchTab('settings')">
+          <span>⚙️ ตั้งค่าร้านค้า & IG</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: Product List -->
+      <div class="admin-tab-content" id="tabContent-products">
+        <!-- 4 Quick Stats Cards -->
+        <div class="admin-stats-row">
+          <div class="admin-stat-card">
+            <div class="stat-card-icon-wrap box">📦</div>
+            <div>
+              <p>สินค้าทั้งหมด</p>
+              <h3 id="adminTotalCount">0</h3>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="stat-card-icon-wrap in-stock">🟢</div>
+            <div>
+              <p>พร้อมส่ง (1-of-1)</p>
+              <h3 id="adminInStockCount" style="color: #059669;">0</h3>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="stat-card-icon-wrap sold">🔴</div>
+            <div>
+              <p>ปิดการขายแล้ว</p>
+              <h3 id="adminSoldCountSummary" style="color: #DC2626;">0</h3>
+            </div>
+          </div>
+          <div class="admin-stat-card">
+            <div class="stat-card-icon-wrap revenue">💰</div>
+            <div>
+              <p>มูลค่าสต็อกพร้อมส่ง</p>
+              <h3 id="adminInventoryValueSummary" style="font-size: 1.35rem; color: var(--pink-600);">฿0</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Search & Filters Toolbar -->
+        <div class="admin-toolbar">
+          <div class="admin-search-box">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="adminSearchInput" placeholder="ค้นหารหัสสินค้า (SKU) หรือชื่อสินค้า..."
+              oninput="AdminPortal.onSearchInput(this.value)">
+            <button type="button" class="btn-clear-search" id="adminClearSearch" onclick="AdminPortal.clearSearch()"
+              style="display: none;" title="ล้างการค้นหา">✕</button>
+          </div>
+
+          <div class="admin-filters">
+            <div class="filter-segmented">
+              <button type="button" class="filter-seg-btn active" data-status="all"
+                onclick="AdminPortal.setFilterStatus('all')">ทั้งหมด</button>
+              <button type="button" class="filter-seg-btn" data-status="inStock"
+                onclick="AdminPortal.setFilterStatus('inStock')">พร้อมส่ง</button>
+              <button type="button" class="filter-seg-btn" data-status="sold"
+                onclick="AdminPortal.setFilterStatus('sold')">ขายแล้ว</button>
+            </div>
+
+            <select id="adminCategoryFilter" class="form-control admin-cat-select"
+              onchange="AdminPortal.setFilterCategory(this.value)">
+              <option value="all">ทุกหมวดหมู่ (All Categories)</option>
+              <option value="tshirt">T-Shirt (เสื้อยืด)</option>
+              <option value="hoodie">Hoodie & Sweater</option>
+              <option value="pants">Pants (กางเกง)</option>
+              <option value="cap">Cap (หมวก)</option>
+              <option value="accessories">Accessories</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="admin-table-meta-bar">
+          <span id="adminFilterResultCount" style="font-size: 0.78rem; font-weight: 600; color: var(--charcoal-500);">
+            กำลังโหลดรายการสินค้า...
+          </span>
+          <span style="font-size: 0.72rem; color: var(--charcoal-400);">
+            * คลิกปุ่ม "มาร์กขายแล้ว / เปิดขายใหม่" เพื่อปรับสถานะ 1-Click ทันที
+          </span>
+        </div>
+
+        <!-- Sticky Product Table -->
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th style="width: 54px;">รูป</th>
+                <th style="width: 100px;">รหัส SKU</th>
+                <th>ชื่อสินค้า & สเปกตัวเสื้อ</th>
+                <th style="width: 130px;">หมวดหมู่</th>
+                <th style="width: 95px;">ราคา</th>
+                <th style="width: 95px;">สถานะ</th>
+                <th style="width: 220px; text-align: center;">จัดการ</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsTbody">
+              <!-- Rendered by AdminPortal.renderAdminProducts() -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- TAB: Sales & Analytics (สถิติยอดขาย & ภาพรวม) -->
+      <div class="admin-tab-content" id="tabContent-analytics" style="display: none;">
+        <div class="analytics-header">
+          <div>
+            <span class="section-label">SALES & INVENTORY INSIGHTS</span>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--charcoal-900);">สรุปภาพรวมยอดขาย & สต็อกสินค้า
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--charcoal-500); margin-top: 0.2rem;">
+              วิเคราะห์ยอดขายและสถานะสินค้า 1-of-1 แบบ Real-time
+            </p>
+          </div>
+          <div class="analytics-refresh-pill">
+            <span class="dot-indicator"></span> คำนวณอัตโนมัติจากสต็อก
+          </div>
+        </div>
+
+        <!-- 4 KPI Summary Cards -->
+        <div class="analytics-kpi-grid">
+          <div class="analytics-kpi-card revenue">
+            <div class="kpi-top">
+              <span class="kpi-label">ยอดขายสะสม (Sold Revenue)</span>
+              <span class="kpi-badge">ขายแล้ว</span>
+            </div>
+            <h4 class="kpi-value" id="kpiSoldRevenue">฿0</h4>
+            <div class="kpi-sub" id="kpiSoldCount">0 ชิ้นที่ปิดการขายแล้ว</div>
+          </div>
+
+          <div class="analytics-kpi-card inventory">
+            <div class="kpi-top">
+              <span class="kpi-label">มูลค่าสินค้าในคลัง (Inventory)</span>
+              <span class="kpi-badge in-stock">พร้อมส่ง</span>
+            </div>
+            <h4 class="kpi-value" id="kpiInventoryValue">฿0</h4>
+            <div class="kpi-sub" id="kpiInventoryCount">0 ชิ้นรอเจ้าของใหม่</div>
+          </div>
+
+          <div class="analytics-kpi-card rate">
+            <div class="kpi-top">
+              <span class="kpi-label">อัตราปิดการขาย (Sell-Through)</span>
+              <span class="kpi-badge percent">% ปิดการขาย</span>
+            </div>
+            <h4 class="kpi-value" id="kpiSellThrough">0%</h4>
+            <div class="kpi-sub" id="kpiTotalPieces">จากสินค้าทั้งหมด 0 ชิ้น</div>
+          </div>
+
+          <div class="analytics-kpi-card avg">
+            <div class="kpi-top">
+              <span class="kpi-label">ราคาเฉลี่ยต่อชิ้น (Avg Price)</span>
+              <span class="kpi-badge avg">ราคาเฉลี่ย</span>
+            </div>
+            <h4 class="kpi-value" id="kpiAvgPrice">฿0</h4>
+            <div class="kpi-sub">เฉลี่ยของทั้งร้านค้า</div>
+          </div>
+        </div>
+
+        <!-- Category Breakdown & IG Strategy -->
+        <div class="analytics-columns">
+          <div class="analytics-card">
+            <div class="analytics-card-header">
+              <h4 class="analytics-card-title">🏷️ สัดส่วนสต็อก & ยอดขายแยกตามหมวดหมู่</h4>
+              <span style="font-size: 0.72rem; color: var(--charcoal-400);">จำนวนชิ้นและยอดขาย</span>
+            </div>
+            <div id="analyticsCategoryList" class="category-breakdown-list">
+              <!-- Rendered by AdminPortal.renderAnalytics() -->
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="analytics-card-header">
+              <h4 class="analytics-card-title">✨ กลยุทธ์ปิดการขาย Instagram Shop</h4>
+              <span style="font-size: 0.72rem; color: var(--pink-600); font-weight: 700;">PRO TIPS</span>
+            </div>
+            <div class="analytics-tips-box">
+              <div class="tip-item">
+                <span class="tip-icon">📸</span>
+                <div>
+                  <strong>รูปถ่ายมุมซูมและป้ายคอ</strong>
+                  <p>ลูกค้าเสื้อผ้ามือสองตัดสินใจเร็วกว่า 3 เท่าเมื่อเห็นภาพป้ายแบรนด์และตะเข็บชัดเจน</p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <span class="tip-icon">⚡</span>
+                <div>
+                  <strong>สินค้า 1-of-1 ตัวเดียวในโลก</strong>
+                  <p>เมื่อลูกค้าคอนเฟิร์มใน DM สามารถกดสลับเป็น "ขายแล้ว" ได้ทันทีจากตารางสินค้า</p>
+                </div>
+              </div>
+              <div class="tip-item">
+                <span class="tip-icon">🔄</span>
+                <div>
+                  <strong>ปุ่มดึงกลับมาขาย (1-Click Restock)</strong>
+                  <p>หากลูกค้าหลุดจองหรือต้องการรีสต็อก กดปุ่ม "นำกลับมาขาย" ด้านล่างได้เลยโดยไม่ต้องกรอกข้อมูลใหม่</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sold Out Items History & 1-Click Restock Table -->
+        <div class="analytics-card" style="margin-top: 1.25rem;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <h4 class="analytics-card-title" style="margin-bottom: 0.2rem;">🛒 ประวัติสินค้าที่ปิดการขายแล้ว (Sold
+                History)</h4>
+              <p style="font-size: 0.78rem; color: var(--charcoal-500);">รายการที่ลูกค้าซื้อไปแล้วผ่าน DM
+                พร้อมปุ่มกู้คืนสต็อกด่วน</p>
+            </div>
+            <span id="analyticsSoldSummary"
+              style="font-size: 0.78rem; font-weight: 700; color: var(--pink-600);">-</span>
+          </div>
+          <div class="admin-table-wrap" style="margin-bottom: 0;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">รูป</th>
+                  <th>รหัสสินค้า</th>
+                  <th>ชื่อสินค้า / ไซซ์</th>
+                  <th>หมวดหมู่</th>
+                  <th>ราคาที่ขายได้</th>
+                  <th style="width: 150px; text-align: center;">นำกลับมาขายใหม่</th>
+                </tr>
+              </thead>
+              <tbody id="analyticsSoldTbody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: Add / Edit Product Form (Organized into 4 Clean Cards) -->
+      <div class="admin-tab-content" id="tabContent-form" style="display: none;">
+        <div class="form-header-bar">
+          <div>
+            <h3 id="productFormTitle"
+              style="font-size: 1.25rem; font-weight: 800; color: var(--charcoal-900); margin-bottom: 0.2rem;">
+              เพิ่มสินค้าใหม่ (Add New Product)
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--charcoal-500);">
+              กรอกข้อมูลชิ้นงานวินเทจ 1-of-1 ให้ครบถ้วนเพื่อความน่าเชื่อถือและการตัดสินใจซื้อง่าย
+            </p>
+          </div>
+          <button type="button" class="btn-outline-pink" onclick="AdminPortal.switchTab('products')">
+            ← กลับไปหน้ารายการสินค้า
+          </button>
+        </div>
+
+        <form id="productForm" onsubmit="AdminPortal.saveProduct(event)">
+          <!-- CARD 1: Basic Info & Pricing -->
+          <div class="form-section-card">
+            <div class="form-section-header">
+              <span class="form-section-num">1</span>
+              <div>
+                <h4 class="form-section-title">ข้อมูลพื้นฐาน & การกำหนดราคา (Basic & Pricing)</h4>
+                <p class="form-section-sub">รหัสสินค้า ชื่อ และราคาจำหน่ายจริงผ่าน Instagram Shop</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="prodCode">รหัสสินค้า (Product SKU Code) *</label>
+                <input type="text" id="prodCode" class="form-control" required placeholder="เช่น MW-2ND-09"
+                  style="text-transform: uppercase;">
+                <span class="form-hint">รหัสสำหรับลูกค้าแคปจอมาแจ้งใน DM เพื่อความรวดเร็ว</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodName">ชื่อสินค้า (Product Name) *</label>
+                <input type="text" id="prodName" class="form-control" required
+                  placeholder="เช่น Vintage 90s Stüssy Boxy Tee">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodCategory">หมวดหมู่ (Category) *</label>
+                <select id="prodCategory" class="form-control" required>
+                  <option value="tshirt">T-Shirt (เสื้อยืด)</option>
+                  <option value="hoodie">Hoodie & Sweater (ฮู้ดดี้)</option>
+                  <option value="pants">Pants & Trousers (กางเกง)</option>
+                  <option value="cap">Cap & Hat (หมวก)</option>
+                  <option value="accessories">Accessories (กระเป๋า & พร็อพ)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodPrice">ราคาขายจริง (บาท) *</label>
+                <div class="input-with-prefix">
+                  <span class="input-prefix">฿</span>
+                  <input type="number" id="prodPrice" class="form-control" required placeholder="890" min="0">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodOriginalPrice">ราคาป้ายเดิม / ก่อนลด (ใส่ว่างได้)</label>
+                <div class="input-with-prefix">
+                  <span class="input-prefix">฿</span>
+                  <input type="number" id="prodOriginalPrice" class="form-control" placeholder="1290" min="0">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodStockCount">จำนวนสต็อก (1-of-1 มือสอง)</label>
+                <input type="number" id="prodStockCount" class="form-control" value="1" min="0">
+              </div>
+
+              <div class="form-group full form-checkboxes-bar">
+                <label class="form-check-label">
+                  <input type="checkbox" id="prodInStock" checked>
+                  <strong>มีสินค้าพร้อมส่ง (In Stock)</strong>
+                </label>
+                <label class="form-check-label">
+                  <input type="checkbox" id="prodIsNew" checked>
+                  <span>สินค้ามาใหม่ (NEW DROP)</span>
+                </label>
+                <label class="form-check-label">
+                  <input type="checkbox" id="prodIsBestSeller">
+                  <span>สินค้าแนะนำ (HOT)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: 1-of-1 Specifications & Measurements -->
+          <div class="form-section-card">
+            <div class="form-section-header">
+              <span class="form-section-num">2</span>
+              <div>
+                <h4 class="form-section-title">สเปกสินค้ามือสอง & ขนาดวัดจริง (1-of-1 Specs)</h4>
+                <p class="form-section-sub">ระบุขนาดที่วัดจริงจากตัวเสื้อและสภาพ เพื่อให้ลูกค้าใส่ได้พอดีมั่นใจ</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="prodFixedSize">ไซซ์ของตัวเสื้อ (Size Tag) *</label>
+                <input type="text" id="prodFixedSize" class="form-control" required
+                  placeholder="เช่น L (Oversized) หรือ FREE (เอว 28-34)">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodCondition">ระดับสภาพสินค้า (Condition Rating) *</label>
+                <input type="text" id="prodCondition" class="form-control" required
+                  placeholder="เช่น ~95%/100% สภาพเหมือนใหม่ (Mint)">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodChest">รอบอก (Chest) *</label>
+                <input type="text" id="prodChest" class="form-control" required placeholder="เช่น 46 นิ้ว หรือ 46\"">
+              </div>
+
+              <div class=" form-group">
+                <label class="form-label" for="prodLength">ความยาว (Length) *</label>
+                <input type="text" id="prodLength" class="form-control" required placeholder="เช่น 28 นิ้ว หรือ 28\"">
+              </div>
+
+              <div class=" form-group">
+                <label class="form-label" for="prodShoulder">ไหล่กว้าง / สะโพก</label>
+                <input type="text" id="prodShoulder" class="form-control" placeholder="เช่น ไหล่ 22 นิ้ว หรือ สะโพก 46\"">
+              </div>
+
+              <div class=" form-group">
+                <label class="form-label" for="prodColor">ชื่อโทนสี (Color Name) *</label>
+                <input type="text" id="prodColor" class="form-control" required placeholder="เช่น Pastel Blush Pink">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodColorHex">
+                  <span>รหัสโค้ดสี HEX</span>
+                  <span class="color-dot" id="liveColorPreviewDot"
+                    style="background-color: #F3C5CE; margin-left: 0.4rem;" title="ตัวอย่างสีจริง"></span>
+                </label>
+                <input type="text" id="prodColorHex" class="form-control" value="#F3C5CE" placeholder="#F3C5CE"
+                  oninput="AdminPortal.updateLiveColorPreview(this.value)">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="prodDefect">ตำหนิ / หมายเหตุสภาพ</label>
+                <input type="text" id="prodDefect" class="form-control"
+                  placeholder="เช่น ไม่มีตำหนิ (ผ่านการคลีนอบโอโซนแล้ว)">
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: Photo Gallery & Cover Uploader -->
+          <div class="form-section-card">
+            <div class="form-section-header">
+              <span class="form-section-num">3</span>
+              <div>
+                <h4 class="form-section-title">แกลเลอรีรูปภาพสินค้าจริง (Photo Gallery & Cover)</h4>
+                <p class="form-section-sub">อัปโหลดภาพถ่ายจริงจากเครื่องได้พร้อมกันหลายมุม และเลือกรูปหน้าปกได้</p>
+              </div>
+            </div>
+
+            <!-- Drag & Drop / File Input Dropzone -->
+            <div class="image-upload-dropzone" id="imgDropzone"
+              onclick="document.getElementById('prodImageFileInput').click()">
+              <input type="file" id="prodImageFileInput" accept="image/*" multiple style="display: none;"
+                onchange="AdminPortal.handleImageFiles(this.files)">
+              <div class="dropzone-inner">
+                <div class="dropzone-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                    <circle cx="9" cy="9" r="2" />
+                    <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                  </svg>
+                </div>
+                <div class="dropzone-text">
+                  <p class="dropzone-main-text"><strong>คลิกเพื่อเลือกไฟล์รูปภาพจากเครื่อง</strong>
+                    หรือลากรูปมาวางที่นี่</p>
+                  <p class="dropzone-sub-text">รองรับภาพถ่ายมุมป้ายแท็ก, ตะเข็บ, ด้านหน้า-หลัง (JPG, PNG, WebP)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thumbnails Grid Preview -->
+            <div class="uploaded-gallery-box" id="uploadedGalleryBox">
+              <div class="gallery-status-bar">
+                <span style="font-size: 0.82rem; font-weight: 700; color: var(--charcoal-800);">
+                  รูปภาพในแกลเลอรี (<span id="uploadedCount">0</span> รูป):
+                </span>
+                <button type="button" class="btn-text-link" onclick="AdminPortal.toggleUrlInput()">
+                  🔗 สลับโหมดระบุ URL โดยตรง
+                </button>
+              </div>
+              <div class="thumbs-grid" id="uploadedThumbsGrid">
+                <!-- Rendered dynamically by AdminPortal.renderImageThumbnails() -->
+              </div>
+            </div>
+
+            <!-- Collapsible direct URL textarea -->
+            <div id="urlInputContainer"
+              style="display: none; margin-top: 0.75rem; background: var(--surface); padding: 0.85rem; border-radius: var(--radius-sm); border: 1px dashed var(--border-light);">
+              <label class="form-label" for="prodImages" style="font-size: 0.78rem;">
+                URL รูปภาพเพิ่มเติม (บรรทัดละ 1 ลิงก์):
+              </label>
+              <textarea id="prodImages" class="form-control" rows="2"
+                placeholder="https://images.unsplash.com/photo-..."
+                onchange="AdminPortal.syncFromUrlTextarea()"></textarea>
+              <span style="font-size: 0.72rem; color: var(--charcoal-400); display: block; margin-top: 0.35rem;">
+                พิมพ์หรือวางลิงก์รูปภาพแล้วระบบจะดึงเข้าแกลเลอรีอัตโนมัติ
+              </span>
+            </div>
+          </div>
+
+          <!-- CARD 4: Description & Highlights -->
+          <div class="form-section-card">
+            <div class="form-section-header">
+              <span class="form-section-num">4</span>
+              <div>
+                <h4 class="form-section-title">เรื่องราว & จุดเด่นเนื้อผ้า (Story & Highlights)</h4>
+                <p class="form-section-sub">รายละเอียดที่จะแสดงในหน้าต่างส่องสินค้า ให้ลูกค้ารู้สึกคุ้มค่า</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group full">
+                <label class="form-label" for="prodDescription">คำอธิบายสินค้า & ฟีลลิ่งเนื้อผ้า</label>
+                <textarea id="prodDescription" class="form-control" rows="3"
+                  placeholder="เช่น เสื้อยืดวินเทจยุค 90s ทรง Boxy สภาพดีมาก ผ้าเฟดธรรมชาติสวยงาม นุ่มสบายไม่ร้อน"></textarea>
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label" for="prodDetails">จุดเด่น / รายละเอียดเพิ่มเติม (บรรทัดละ 1 ข้อ)</label>
+                <textarea id="prodDetails" class="form-control" rows="3"
+                  placeholder="ผ้า Cotton 100% 260 GSM&#10;ผ่านการคลีนและอบฆ่าเชื้อโอโซนแล้ว&#10;สินค้า 1-of-1 ชิ้นเดียวในสต็อก"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sticky Form Bottom Action Bar -->
+          <div class="form-sticky-footer">
+            <button type="button" class="btn-outline-pink" onclick="AdminPortal.switchTab('products')">ยกเลิก</button>
+            <button type="submit" class="btn-primary" id="productFormSubmitBtn" style="padding: 0.65rem 1.75rem;">
+              💾 บันทึกข้อมูลสินค้า
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- TAB 4: Store Settings Form -->
+      <div class="admin-tab-content" id="tabContent-settings" style="display: none;">
+        <div class="form-header-bar">
+          <div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--charcoal-900); margin-bottom: 0.2rem;">
+              ตั้งค่าข้อมูลร้านค้า & ความปลอดภัย
+            </h3>
+            <p style="font-size: 0.82rem; color: var(--charcoal-500);">
+              จัดการข้อมูลชื่อร้านค้า, ช่องทาง Instagram Shop DM, และรหัสผ่านเข้าแอดมิน
+            </p>
+          </div>
+        </div>
+
+        <form onsubmit="AdminPortal.saveShopSettings(event)">
+          <!-- SETTING CARD 1: Store & Socials -->
+          <div class="form-section-card">
+            <div class="form-section-header">
+              <span class="form-section-num">🏪</span>
+              <div>
+                <h4 class="form-section-title">ข้อมูลร้านค้า & บัญชี Instagram</h4>
+                <p class="form-section-sub">ลิงก์ที่จะใช้เปิดหน้าต่างสั่งซื้อ Instagram DM</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="settingShopName">ชื่อร้านค้า (Shop Name) *</label>
+                <input type="text" id="settingShopName" class="form-control" required value="MEOW STUDIO">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="settingIgHandle">Instagram Username ของร้าน (ไม่ต้องพิมพ์ @) *</label>
+                <input type="text" id="settingIgHandle" class="form-control" required value="me_ws.t0re"
+                  placeholder="me_ws.t0re">
+                <span class="form-hint">เช่น me_ws.t0re ระบบจะนำไปสร้างลิงก์เปิดหน้าร้านและทักแชตอัตโนมัติ</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="settingLineId">LINE Official ID (สำหรับช่องทางสำรอง)</label>
+                <input type="text" id="settingLineId" class="form-control" value="@meowstudio">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="settingCurrency">สัญลักษณ์สกุลเงิน</label>
+                <input type="text" id="settingCurrency" class="form-control" value="฿">
+              </div>
+
+              <div class="form-group full">
+                <label class="form-label" for="settingAnnouncement">ข้อความแถบประกาศด้านบนสุด (Top Announcement
+                  Bar)</label>
+                <input type="text" id="settingAnnouncement" class="form-control"
+                  value="✨ NEW DROP 'PASTEL NOIR' COLLECTION | สั่งซื้อง่ายๆ ผ่าน Instagram DM ส่งฟรีทุกออเดอร์ 1,500.- ขึ้นไป ✨">
+              </div>
+            </div>
+          </div>
+
+          <!-- SETTING CARD 2: Security & PIN -->
+          <div class="form-section-card">
+            <div class="form-section-header">
+              <span class="form-section-num">🔐</span>
+              <div>
+                <h4 class="form-section-title">ความปลอดภัย & รหัสผ่าน PIN แอดมิน</h4>
+                <p class="form-section-sub">รหัสผ่าน 4-8 หลัก สำหรับเปิดระบบหลังบ้านนี้</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="settingPin">รหัส PIN ปัจจุบัน (ค่าเริ่มต้น: 8888)</label>
+                <input type="text" id="settingPin" class="form-control" value="8888" maxlength="8"
+                  style="font-family: var(--font-mono); font-size: 1.1rem; letter-spacing: 0.2em;">
+                <span class="form-hint">แนะนำให้ตั้งรหัสที่จำง่ายแต่ปลอดภัย</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SETTING CARD 3: Danger Zone -->
+          <div class="form-section-card danger-zone-card">
+            <div class="form-section-header">
+              <span class="form-section-num danger">⚠️</span>
+              <div>
+                <h4 class="form-section-title" style="color: #DC2626;">พื้นที่จัดการข้อมูลระบบ (Danger Zone)</h4>
+                <p class="form-section-sub">รีเซ็ตสินค้าตัวอย่างเริ่มต้น หรือกู้คืนข้อมูลกรณีต้องการเริ่มใหม่</p>
+              </div>
+            </div>
+
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <strong
+                  style="font-size: 0.85rem; color: var(--charcoal-900);">รีเซ็ตข้อมูลแคตตาล็อกกลับเป็นค่าเริ่มต้น</strong>
+                <p style="font-size: 0.75rem; color: var(--charcoal-500); margin: 0.2rem 0 0;">
+                  จะคืนค่าสินค้าตัวอย่างทั้ง 8 รายการเดิม และลบสินค้าที่คุณทดสอบเพิ่มเอง
+                </p>
+              </div>
+              <button type="button" class="btn-danger-outline" onclick="AdminPortal.resetToDefaultCatalog()">
+                🔄 รีเซ็ตข้อมูลแคตตาล็อกเริ่มต้น
+              </button>
+            </div>
+          </div>
+
+          <div class="form-sticky-footer">
+            <button type="submit" class="btn-primary" style="padding: 0.65rem 1.75rem;">
+              ✨ บันทึกการตั้งค่าร้านค้า
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+
+</html>

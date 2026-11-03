@@ -1,0 +1,13 @@
+{
+  "name": "meow-pastel-streetwear",
+  "version": "1.0.0",
+  "description": "Minimal Fashion Store with Pastel Pink Aesthetic & Instagram Order Integration",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve . -l 3000",
+    "dev": "npx -y serve . -l 3000"
+  },
+  "keywords": ["fashion", "streetwear", "minimal", "pastel", "instagram-shop"],
+  "author": "Antigravity",
+  "license": "MIT"
+}
