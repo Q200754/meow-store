@@ -1515,9 +1515,9 @@ input, select, textarea {
 .modal-container {
   background: var(--white);
   border-radius: var(--radius-lg);
-  width: 100%;
-  max-width: 960px;
-  max-height: 92vh;
+  width: 95vw;
+  max-width: 1200px;
+  max-height: 94vh;
   overflow-y: auto;
   box-shadow: var(--shadow-xl);
   position: relative;
@@ -1559,13 +1559,19 @@ input, select, textarea {
 
 @media (min-width: 768px) {
   .detail-grid {
-    grid-template-columns: 1fr 1.05fr;
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .detail-grid {
+    grid-template-columns: 1fr 1.18fr;
   }
 }
 
 /* Modal Gallery */
 .detail-gallery {
-  padding: 1.5rem;
+  padding: 1.75rem;
   background: var(--surface);
   display: flex;
   flex-direction: column;
@@ -1574,6 +1580,10 @@ input, select, textarea {
 
 .gallery-main-view {
   aspect-ratio: 3/4;
+  max-height: calc(85vh - 130px);
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
   border-radius: var(--radius-md);
   overflow: hidden;
   background: var(--white);
@@ -1620,7 +1630,7 @@ input, select, textarea {
 
 /* Modal Content Info */
 .detail-info {
-  padding: 2rem 1.75rem;
+  padding: 2.25rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
